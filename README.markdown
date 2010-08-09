@@ -7,5 +7,5 @@ Tested to run on:
 
 Usage:
 
-Launch the vmwf_starter.rb file. Choose a VM to start. Enjoy it not having a GUI.
+Well, most of it does not work. To run it, fire up the main.rb, and follow along. The launcher works, but not much past that.
 
