@@ -1,4 +1,5 @@
-#!/usr/bin/env ruby -wKU
+#!/usr/bin/env ruby 
+#-wKU
 
 #Lets get needed stuff loaded
 require 'etc'
@@ -17,7 +18,8 @@ require "./lister"
 @ex = false
 
 def main()
-  puts "\n\n\n\n\n\nVMWare Fusion Tools"
+  system("clear")
+  puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts " "
   puts "Choose your task:"
   puts "1:  Start a headless VM"

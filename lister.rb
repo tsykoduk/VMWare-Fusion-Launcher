@@ -1,8 +1,11 @@
 def lister()
-  vms = system(@launcher.to_s + " list")
-
-vms.to_s.each_line { |v|
-    puts File.basename(v) 
-    }
+  system("clear")
+  puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
+  puts "VM Images Running\n"
+  vms = IO.popen(@launcher.to_s + " list")
+  puts "\n\n\n"
+  puts vms.readlines
+  puts "\n++++++++++++++++++++++++++\n Enter to continue"
+  blargh = gets
 
 end

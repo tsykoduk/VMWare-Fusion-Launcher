@@ -1,7 +1,8 @@
 def starter(head)
   
   #Display menu
-
+  system("clear")
+  puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts "VM Image\n"
 
   @vm_list.each { |vm|
@@ -17,13 +18,12 @@ def starter(head)
   end
   
   #Launch chosen VM
-
-  # First we need to find the .vmx file to launch (it might not be the same as the vm name!!)
   target = @vm_list[choice.to_i]
 
+  # First we need to find the .vmx file to launch (it might not be the same as the vm name!!)
   vmx = Dir.glob(target+"/*.vmx").to_s
   vmx = vmx.gsub(" ", "\\ ").gsub("[","").gsub("]","").gsub("\"","")
-  launcher = @launcher + " -T fusion start "
+  launcher = @launcher + " -T start "
 
   if head == true
     gui = " "
@@ -31,8 +31,10 @@ def starter(head)
     gui = " nogui"
   end
   
-  if system(launcher.to_s + " " + vmx.to_s + gui)
-    puts "Launched"
+  full_cmd = launcher.to_s + " " + vmx.to_s + gui
+  
+  if IO.popen(full_cmd.to_s)
+    puts "Launched " + target
   else
     puts "Not launched - something went wrong - here is a dump of the enviroment: "
     puts "Launch Command: " + launcher
@@ -40,5 +42,9 @@ def starter(head)
     puts "Full Target: " + target
     puts "Your Choice: " + choice
   end
+  
+  
+  puts "\n++++++++++++++++++++++++++\n Enter to continue"
+  blargh = gets
 
 end
