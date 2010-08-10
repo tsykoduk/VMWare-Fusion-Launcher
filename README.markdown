@@ -7,5 +7,4 @@ Tested to run on:
 
 Usage:
 
-Well, most of it does not work. To run it, fire up the main.rb, and follow along. The launcher works, but not much past that.
-
+Execute start, and follow along.
