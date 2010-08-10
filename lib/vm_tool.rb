@@ -30,8 +30,6 @@ def vm_tool(head,action)
   else
     mgui = " nogui"
   end
-  
- # full_cmd = launcher.to_s + " " + vmx.to_s + gui
  
   if system(launcher.to_s + vmx.to_s + mgui.to_s)
     case action 
@@ -48,18 +46,7 @@ def vm_tool(head,action)
     puts "VMX File: " + vmx
     puts "Full Target: " + target
     puts "Your Choice: " + choice
-  end
-  
- # if IO.popen(full_cmd.to_s)
- #   puts "Launched " + target
- # else
-#    puts "Not launched - something went wrong - here is a dump of the enviroment: "
-#    puts "Launch Command: " + launcher
-#    puts "VMX File: " + vmx
-#    puts "Full Target: " + target
-#    puts "Your Choice: " + choice
-#  end
-  
+  end  
   
   puts "\n++++++++++++++++++++++++++\n Enter to continue"
   blargh = gets

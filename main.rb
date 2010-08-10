@@ -16,6 +16,7 @@ require "./lib/lister"
 @launcher = "/Library/Application\\ Support/VMware\\ Fusion/vmrun"
 @ex = false
 
+
 def main()
   system("clear")
   puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
