@@ -1,6 +1,6 @@
 VMWare Fusion Launcher for OSX
 
-Tested to run on: 10.6.4 running Ruby 1.9.2dev via RVM
+Tested to run on: 10.6.4 running Ruby 1.9.2dev via rvm and mac's system ruby.
 
 Usage:
 
