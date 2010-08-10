@@ -3,9 +3,8 @@
 
 #Lets get needed stuff loaded
 require 'etc'
-require "./starter"
-require "./stopper"
-require "./lister"
+require "./lib/vm_tool"
+require "./lib/lister"
 
 ## VMWare Tools
 
@@ -18,7 +17,7 @@ require "./lister"
 @ex = false
 
 def main()
- # system("clear")
+  system("clear")
   puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts " "
   puts "Choose your task:"
@@ -32,15 +31,15 @@ def main()
   mychoice = gets 
   case mychoice.to_i
     when 1  
-      starter(false)
+      vm_tool(false,"start")
     when 2 
-      starter(true)
+      vm_tool(true,"start")
     when 3 
       lister()
     when 4 
-      stopper(true)
+      vm_tool(true,"stop")
     when 5 
-      stopper(false)
+      vm_tool(true,"reset")
     when 6 
       @ex = true
     else 
