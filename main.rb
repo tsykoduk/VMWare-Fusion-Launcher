@@ -18,7 +18,7 @@ require "./lister"
 @ex = false
 
 def main()
-  system("clear")
+ # system("clear")
   puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts " "
   puts "Choose your task:"

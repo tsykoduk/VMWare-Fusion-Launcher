@@ -11,14 +11,14 @@ def starter(head)
 
   puts "Q:  Quit"
   puts "\nChoose one by number: "
-  choice = gets
+  choice = gets.chomp
   
-  if choice == "Q" || "q"
+  if choice == "Q" or choice == "q"
     return false
+  else
+    #Launch chosen VM
+    target = @vm_list[choice.to_i]
   end
-  
-  #Launch chosen VM
-  target = @vm_list[choice.to_i]
 
   # First we need to find the .vmx file to launch (it might not be the same as the vm name!!)
   vmx = Dir.glob(target+"/*.vmx").to_s
@@ -26,22 +26,32 @@ def starter(head)
   launcher = @launcher + " -T start "
 
   if head == true
-    gui = " "
+    mgui = ""
   else
-    gui = " nogui"
+    mgui = "nogui"
   end
   
-  full_cmd = launcher.to_s + " " + vmx.to_s + gui
-  
-  if IO.popen(full_cmd.to_s)
-    puts "Launched " + target
+ # full_cmd = launcher.to_s + " " + vmx.to_s + gui
+ 
+  if system(@launcher.to_s + " " + @vmx.to_s + " " + mgui.to_s)
+    puts "Launched"
   else
     puts "Not launched - something went wrong - here is a dump of the enviroment: "
-    puts "Launch Command: " + launcher
-    puts "VMX File: " + vmx
-    puts "Full Target: " + target
-    puts "Your Choice: " + choice
+    puts "Launch Command: " + @launcher
+    puts "VMX File: " + @vmx
+    puts "Full Target: " + @target
+    puts "Your Choice: " + @choice
   end
+  
+ # if IO.popen(full_cmd.to_s)
+ #   puts "Launched " + target
+ # else
+#    puts "Not launched - something went wrong - here is a dump of the enviroment: "
+#    puts "Launch Command: " + launcher
+#    puts "VMX File: " + vmx
+#    puts "Full Target: " + target
+#    puts "Your Choice: " + choice
+#  end
   
   
   puts "\n++++++++++++++++++++++++++\n Enter to continue"
