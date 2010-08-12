@@ -3,8 +3,7 @@
 
 #Lets get needed stuff loaded
 require 'etc'
-require "./lib/vm_tool"
-require "./lib/lister"
+require "./vm_tool"
 
 ## VMWare Tools
 
@@ -27,7 +26,8 @@ def main()
   puts "3:  List running VM's"
   puts "4:  Stop a VM"
   puts "5:  Restart a VM"
-  puts "6:  Exit"
+  puts "6:  Snapshot a VM"
+  puts "7:  Exit"
 
   mychoice = gets 
   case mychoice.to_i
@@ -41,10 +41,12 @@ def main()
       vm_tool(true,"stop")
     when 5 
       vm_tool(true,"reset")
-    when 6 
+    when 6
+      vm_tool(true,"snap")
+    when 7
       @ex = true
     else 
-      puts "Woops, I did not understand that!! (you tried #{mychoice}, I expected a number between 1 and 6)"
+      puts "Woops, I did not understand that!! (you tried #{mychoice}, I expected a number between 1 and 7)"
   end
 end
 
