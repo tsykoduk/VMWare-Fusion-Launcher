@@ -1,3 +1,11 @@
+def vm_tool(head,action)
+  #call out the diffrent functions
+
+  vm = vm_menu()
+  vmx = vm_target(vm)
+  vm_action(head,action,vmx)
+end
+
 def vm_menu()
   # Builds a menu of all of the VM's in the default directory.
   # Returns the user's choosen VM
@@ -21,16 +29,16 @@ def vm_menu()
   end
 end
 
-def vm_target(vmx)
+def vm_target(vm)
   # Takes a vm choice (usally from the vm_menu function) and builds out a path to the correct *.vmx 
   # First we need to find the .vmx file to launch (it might not be the same as the vm name!!)
-  vmx = Dir.glob(target+"/*.vmx").to_s
+  vmx = Dir.glob(vm+"/*.vmx").to_s
   vmx = vmx.gsub(" ", "\\ ").gsub("[","").gsub("]","").gsub("\"","")
   return vmx
 end
 
 def vm_action(head,action,vmx)
-  # starts, stops, reboots or snaps a VM
+  # starts, stops, reboots a VM
   launcher = @launcher + " " + action + " "
 
   if head == true

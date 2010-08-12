@@ -3,7 +3,8 @@
 
 #Lets get needed stuff loaded
 require 'etc'
-require "./vm_tool"
+require "./lib/vm_tool"
+require "./lib/snap_menu"
 
 ## VMWare Tools
 
@@ -36,13 +37,13 @@ def main()
     when 2 
       vm_tool(true,"start")
     when 3 
-      lister()
+      vm_lister()
     when 4 
       vm_tool(true,"stop")
     when 5 
       vm_tool(true,"reset")
     when 6
-      vm_tool(true,"snap")
+      vm_snapper()
     when 7
       @ex = true
     else 
