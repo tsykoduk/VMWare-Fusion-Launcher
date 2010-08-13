@@ -23,18 +23,12 @@ def vm_snap_menu()
   
   case choice.to_i
   when 1
-    puts choice
-    puts "starting vmsnap"
     vm_snap('list')
   when 2
-        puts choice
-    puts "starting vmsnap"
     vm_snap('snapshot')
   when 3
-    puts "starting vmsnap"
     vm_snap('deleteSnapshot')
   when 4
-    puts "starting vmsnap"
     vm_snap('revertToSnapshot')
   when 5
     @snap_exit = true
