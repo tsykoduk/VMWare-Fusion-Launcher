@@ -1,5 +1,9 @@
 def vm_snap(action)
-  vm = vm_lister()
+  puts action
+  puts "starting vm_menu"
+  vm = vm_menu()
+  puts vm
+  puts "starting vm_target"
   vmx = vm_target(vm)
   if action == "list"
     vm_snap_list(vmx)
@@ -10,7 +14,7 @@ end
 
 
 def vm_snap_list(vmx)
-  system("clear")
+#  system("clear")
   puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts "Snaps for #{vmx}\n"
   
@@ -29,7 +33,7 @@ def vm_snapshot(vmx,action)
   launcher = @launcher + " " + action + " "
   puts "We need a snapshot name: "
   name = gets
-  if system(launcher.to_s + vmx.to_s + name.to_s)
+  if system(launcher.to_s + vmx.to_s + " " + name.to_s)
     case action 
     when "snapshot"
       puts "Snapshoted"
@@ -37,6 +41,7 @@ def vm_snapshot(vmx,action)
       puts "Snap removed"
     when "revertToSnapshot"
       puts "Reverted to snap"
+    end
   else
     puts "#{action} not completed - something went wrong - here is a dump of the enviroment: "
     puts "Launch Command: " + launcher.to_s + " " + vmx.to_s + name.to_s

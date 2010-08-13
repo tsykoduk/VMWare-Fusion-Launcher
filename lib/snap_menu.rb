@@ -2,9 +2,9 @@ def vm_snapper()
   #start the menu
   @snap_exit = false
   
-  #while @snap_exit == false
+  while @snap_exit == false
     vm_snap_menu()
-  #end
+  end
 end
 
 def vm_snap_menu()
@@ -21,14 +21,20 @@ def vm_snap_menu()
   
   choice = gets
   
-  case choice
+  case choice.to_i
   when 1
+    puts choice
+    puts "starting vmsnap"
     vm_snap('list')
   when 2
+        puts choice
+    puts "starting vmsnap"
     vm_snap('snapshot')
   when 3
+    puts "starting vmsnap"
     vm_snap('deleteSnapshot')
   when 4
+    puts "starting vmsnap"
     vm_snap('revertToSnapshot')
   when 5
     @snap_exit = true

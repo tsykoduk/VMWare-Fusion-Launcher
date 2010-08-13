@@ -5,6 +5,7 @@
 require 'etc'
 require "./lib/vm_tool"
 require "./lib/snap_menu"
+require "./lib/vm_snap"
 
 ## VMWare Tools
 
@@ -18,7 +19,7 @@ require "./lib/snap_menu"
 
 
 def main()
-  system("clear")
+#  system("clear")
   puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts " "
   puts "Choose your task:"

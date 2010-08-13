@@ -9,7 +9,7 @@ end
 def vm_menu()
   # Builds a menu of all of the VM's in the default directory.
   # Returns the user's choosen VM
-  system("clear")
+#  system("clear")
   puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts "VM Image\n"
 
@@ -73,7 +73,7 @@ end
 
 def vm_lister()
   # makes a list of the vm's in the default vm directory
-  system("clear")
+#  system("clear")
   puts "\n++++++++++++++++++++++++++\nVMWare Fusion Tools\n++++++++++++++++++++++++++\n"
   puts "VM Images Running\n"
   
