@@ -33,7 +33,7 @@ def vm_snapshot(vmx,action)
   launcher = @launcher + " " + action + " "
   puts "We need a snapshot name: "
   name = gets
-  if system(launcher.to_s + vmx.to_s + " " + name.to_s)
+if spinner(system(launcher.to_s + vmx.to_s + " " + name.to_s))
     case action 
     when "snapshot"
       puts "Snapshoted"

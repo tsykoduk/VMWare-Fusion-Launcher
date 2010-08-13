@@ -52,6 +52,20 @@ def main()
   end
 end
 
+#TODO - I want a spinner for the snapping. This is totally busted right now.
+
+def spinner(code)
+ chars = %w{ | / - \\ }
+ t = Thread.new { code.call }
+ while t.alive?
+   print chars[0]
+   sleep 0.1
+   print "\b"
+ 
+   chars.push chars.shift
+ end
+ t.join
+end
 
 while @ex == false
   main()
